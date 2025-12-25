@@ -241,3 +241,50 @@ footer {
     text-decoration: none;
     font-weight: 600;
 }
+
+/* =========================
+   MOBILE RESPONSIVENESS
+========================= */
+@media (max-width: 768px) {
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    header p {
+        font-size: 14px;
+    }
+
+    nav a {
+        display: block;
+        margin: 10px 0;
+        font-size: 16px;
+    }
+
+    section {
+        padding: 25px 15px;
+        margin: 20px 10px;
+    }
+
+    section h2 {
+        font-size: 22px;
+    }
+
+    .action-btn {
+        width: 100%;
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .calculator-box {
+        max-width: 100%;
+    }
+
+    footer {
+        font-size: 13px;
+    }
+}
