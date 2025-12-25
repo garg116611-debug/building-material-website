@@ -1,0 +1,125 @@
+/* =========================
+   GLOBAL RESET
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* =========================
+   BODY
+========================= */
+body {
+    background-color: #F4F4F4;   /* Concrete light */
+    color: #333333;
+    line-height: 1.6;
+}
+
+/* =========================
+   HEADER
+========================= */
+header {
+    background-color: #2E2E2E;   /* Steel grey */
+    color: #ffffff;
+    padding: 28px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 32px;
+    letter-spacing: 1px;
+}
+
+header p {
+    margin-top: 6px;
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+nav {
+    background-color: #455A64;   /* Cement blue */
+    padding: 14px 10px;
+    text-align: center;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+nav a:hover {
+    border-bottom: 2px solid #F57C00;
+}
+
+/* =========================
+   SECTIONS (CARDS)
+========================= */
+section {
+    background-color: #ffffff;
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 40px 25px;
+    border-radius: 6px;
+}
+
+section h2 {
+    font-size: 26px;
+    margin-bottom: 10px;
+    color: #2E2E2E;
+}
+
+section p {
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+section button {
+    background-color: #F57C00;   /* Construction orange */
+    color: #ffffff;
+    border: none;
+    padding: 12px 28px;
+    margin: 10px;
+    font-size: 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+section button:hover {
+    background-color: #e06f00;
+}
+
+/* =========================
+   LIST (WHY CHOOSE US)
+========================= */
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul li {
+    font-size: 15px;
+    margin: 10px 0;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+    background-color: #2E2E2E;
+    color: #ffffff;
+    text-align: center;
+    padding: 18px;
+    margin-top: 50px;
+    font-size: 14px;
+}
