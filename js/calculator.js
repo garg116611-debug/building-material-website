@@ -1,8 +1,8 @@
 function calculateCost() {
     let cementBags = document.getElementById("cement").value;
     let steelKg = document.getElementById("steel").value;
+    let floors = document.getElementById("floors").value;
 
-    // Approx rates (change anytime)
     let cementRate = 400; // per bag
     let steelRate = 65;   // per kg
 
@@ -15,9 +15,20 @@ function calculateCost() {
     let cementCost = cementBags * cementRate;
     let steelCost = steelKg * steelRate;
 
-    let totalCost = cementCost + steelCost;
+    let baseCost = cementCost + steelCost;
+
+    // Floor multiplier
+    let multiplier = 1;
+
+    if (floors == 2) {
+        multiplier = 1.8;
+    } else if (floors == 3) {
+        multiplier = 2.5;
+    }
+
+    let totalCost = baseCost * multiplier;
 
     document.getElementById("result").innerText =
-        "Estimated Cost: ₹" + totalCost +
-        " (Final price may vary. Contact Shyam Steel)";
+        "Estimated Cost: ₹" + Math.round(totalCost) +
+        " (" + floors + " floor building). Final price may vary. Contact Shyam Steel.";
 }

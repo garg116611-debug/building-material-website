@@ -219,3 +219,8 @@ footer {
     width: 100%;
 }
 
+.calculator-box select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+}
