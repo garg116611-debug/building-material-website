@@ -124,3 +124,27 @@ footer {
     margin-top: 50px;
     font-size: 14px;
 }
+
+/* ACTION BUTTON FIX */
+.action-buttons {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.action-btn {
+    display: inline-block;
+    background-color: #F57C00;
+    color: #ffffff;
+    padding: 14px 30px;
+    margin: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.action-btn:active {
+    transform: scale(0.98);
+}
+
