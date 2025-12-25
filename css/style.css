@@ -195,3 +195,27 @@ footer {
     font-weight: 600;
 }
 
+/* CALCULATOR */
+.calculator-box {
+    max-width: 400px;
+    margin: auto;
+    text-align: left;
+}
+
+.calculator-box label {
+    display: block;
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+.calculator-box input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+.calculator-box button {
+    margin-top: 20px;
+    width: 100%;
+}
+
