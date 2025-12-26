@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://garg116611-debug.github.io/building-material-website/sitemap.xml
