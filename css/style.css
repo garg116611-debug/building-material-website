@@ -5,14 +5,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Segoe UI", Arial, sans-serif;
+    font-family: "Poppins", "Segoe UI", Arial, sans-serif;
 }
 
 /* =========================
    BODY
 ========================= */
 body {
-    background-color: #F4F4F4;   /* Concrete light */
+    background-color: #F4F4F4;
+    /* Concrete light */
     color: #333333;
     line-height: 1.6;
 }
@@ -21,29 +22,34 @@ body {
    HEADER
 ========================= */
 header {
-    background-color: #2E2E2E;   /* Steel grey */
+    background-color: #2E2E2E;
+    /* Steel grey */
     color: #ffffff;
-    padding: 28px 20px;
+    padding: 32px 20px;
     text-align: center;
 }
 
 header h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
 }
 
-
 header p {
-    margin-top: 6px;
-    font-size: 16px;
+    margin-top: 8px;
+    font-size: 1rem;
+    font-weight: 400;
     opacity: 0.9;
+    letter-spacing: 0.5px;
 }
 
 /* =========================
    NAVBAR
 ========================= */
 nav {
-    background-color: #455A64;   /* Cement blue */
+    background-color: #455A64;
+    /* Cement blue */
     padding: 14px 10px;
     text-align: center;
 }
@@ -73,14 +79,18 @@ section {
 
 
 section h2 {
-    font-size: 26px;
-    margin-bottom: 12px;
-    color: #2E2E2E;
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #1a1a2e;
+    letter-spacing: 0.5px;
 }
 
 section p {
-    font-size: 15px;
-    line-height: 1.7;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.8;
+    color: #444;
 }
 
 
@@ -88,7 +98,8 @@ section p {
    BUTTONS
 ========================= */
 section button {
-    background-color: #F57C00;   /* Construction orange */
+    background-color: #F57C00;
+    /* Construction orange */
     color: #ffffff;
     border: none;
     padding: 12px 28px;
@@ -125,6 +136,7 @@ footer {
     padding: 20px 10px;
     font-size: 13px;
 }
+
 footer p {
     margin: 5px 0;
 }
@@ -167,7 +179,7 @@ footer p {
     padding: 25px;
     border-radius: 6px;
     text-align: center;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .product-card h3 {
