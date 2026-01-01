@@ -26,52 +26,122 @@
     </header>
 
     <!-- NAVBAR -->
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="products.html">Products</a>
-        <a href="calculator.html">Calculator</a>
-        <a href="contact.html">Contact</a>
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">SHYAM STEEL</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="calculator.html" class="active">Calculator</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
     </nav>
 
     <!-- CALCULATOR SECTION -->
-    <section>
-        <h2>Material Cost Calculator</h2>
-        <p>Get an approximate cost for your construction materials.</p>
-
-        <div class="calculator-box">
-
-            <label>Area (in sq. ft)</label>
-            <input type="number" id="area" placeholder="Enter area">
-
-            <label>Cement Bags (Nos)</label>
-            <input type="number" id="cement" placeholder="Enter cement bags">
-
-            <label>TMT Steel (in Kg)</label>
-            <input type="number" id="steel" placeholder="Enter steel quantity">
-
-            <label>Number of Floors</label>
-            <select id="floors">
-                <option value="1">Single Storey</option>
-                <option value="2">Double Storey</option>
-                <option value="3">Triple Storey</option>
-            </select>
-
-
-            <button class="action-btn" onclick="calculateCost()">Calculate</button>
-
-            <h3 id="result"></h3>
-            <p style="font-size:13px; margin-top:10px;">
-                *This is an approximate estimate. Final pricing may vary based on site conditions.
-            </p>
-
+    <section class="calculator-section">
+        <div class="calculator-header">
+            <h2>🧮 Material Cost Calculator</h2>
+            <p>Get an instant estimate for your construction materials</p>
         </div>
+
+        <div class="calculator-container">
+            <div class="calculator-form">
+                <div class="input-group">
+                    <label for="area">
+                        <span class="input-icon">📐</span>
+                        Area (sq. ft)
+                    </label>
+                    <input type="number" id="area" placeholder="e.g., 1000" min="0">
+                </div>
+
+                <div class="input-group">
+                    <label for="cement">
+                        <span class="input-icon">🧱</span>
+                        Cement Bags
+                    </label>
+                    <input type="number" id="cement" placeholder="e.g., 100" min="0">
+                </div>
+
+                <div class="input-group">
+                    <label for="steel">
+                        <span class="input-icon">🔩</span>
+                        TMT Steel (Kg)
+                    </label>
+                    <input type="number" id="steel" placeholder="e.g., 500" min="0">
+                </div>
+
+                <div class="input-group">
+                    <label for="floors">
+                        <span class="input-icon">🏠</span>
+                        Number of Floors
+                    </label>
+                    <select id="floors">
+                        <option value="1">Single Storey (G)</option>
+                        <option value="2">Double Storey (G+1)</option>
+                        <option value="3">Triple Storey (G+2)</option>
+                    </select>
+                </div>
+
+                <button class="calc-btn" onclick="calculateCost()">
+                    Calculate Estimate
+                </button>
+            </div>
+
+            <div class="calculator-result" id="resultContainer">
+                <div class="result-placeholder">
+                    <div class="result-icon">📊</div>
+                    <p>Enter quantities and click Calculate to see your estimate</p>
+                </div>
+            </div>
+        </div>
+
+        <p class="calculator-disclaimer">
+            *This is an approximate estimate. Final pricing may vary based on current market rates and site conditions.
+            Contact us for accurate quotes.
+        </p>
     </section>
 
     <footer>
-        <p>© 2026 Shyam Steel. All Rights Reserved.</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>SHYAM STEEL</h4>
+                <p>Your trusted partner for quality building materials in Sri Muktsar Sahib.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="calculator.html">Calculator</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li>📍 Sri Muktsar Sahib, Punjab</li>
+                    <li>📞 <a href="tel:+919999999999">+91 99999 99999</a></li>
+                    <li>💬 <a href="https://wa.me/919999999999">WhatsApp</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Shyam Steel. All rights reserved.</p>
+        </div>
     </footer>
 
+    <a href="https://wa.me/919999999999?text=Hi, I need a quote for building materials" class="whatsapp-float"
+        target="_blank" aria-label="Chat on WhatsApp">💬</a>
+
+    <script src="js/animations.js"></script>
     <script src="js/calculator.js"></script>
+    <script src="js/nav.js"></script>
 
 </body>
 

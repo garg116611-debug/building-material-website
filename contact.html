@@ -26,11 +26,21 @@
     </header>
 
     <!-- NAVBAR -->
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="products.html">Products</a>
-        <a href="calculator.html">Calculator</a>
-        <a href="contact.html">Contact</a>
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">SHYAM STEEL</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="calculator.html">Calculator</a>
+                <a href="contact.html" class="active">Contact</a>
+            </div>
+        </div>
     </nav>
 
     <!-- CONTACT SECTION -->
@@ -73,9 +83,39 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>© 2026 Shyam Steel. All Rights Reserved.</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>SHYAM STEEL</h4>
+                <p>Your trusted partner for quality building materials in Sri Muktsar Sahib.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="calculator.html">Calculator</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li>📍 Sri Muktsar Sahib, Punjab</li>
+                    <li>📞 <a href="tel:+919999999999">+91 99999 99999</a></li>
+                    <li>💬 <a href="https://wa.me/919999999999">WhatsApp</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Shyam Steel. All rights reserved.</p>
+        </div>
     </footer>
 
+    <a href="https://wa.me/919999999999?text=Hi, I have a question" class="whatsapp-float" target="_blank"
+        aria-label="Chat on WhatsApp">💬</a>
+
+    <script src="js/animations.js"></script>
+    <script src="js/nav.js"></script>
 </body>
 
 </html>

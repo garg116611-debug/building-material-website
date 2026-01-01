@@ -26,11 +26,21 @@
     </header>
 
     <!-- NAVBAR -->
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="products.html">Products</a>
-        <a href="calculator.html">Calculator</a>
-        <a href="contact.html">Contact</a>
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">SHYAM STEEL</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="products.html" class="active">Products</a>
+                <a href="calculator.html">Calculator</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
     </nav>
 
     <!-- PRODUCTS SECTION -->
@@ -43,69 +53,138 @@
 
             <!-- Product Card 1 -->
             <div class="product-card">
-                <span class="badge">Available</span>
-
+                <span class="badge">In Stock</span>
+                <div class="product-icon">🧱</div>
                 <h3>Cement</h3>
-                <p>ISI approved cement from trusted brands</p>
-                <a href="https://wa.me/919999999999" class="action-btn" target="_blank">
-                    Ask Price
+                <p>ISI approved cement from trusted brands like UltraTech, ACC, Ambuja & more</p>
+                <div class="product-features">
+                    <span>✓ OPC & PPC</span>
+                    <span>✓ 50kg Bags</span>
+                </div>
+                <a href="https://wa.me/919999999999?text=Hi, I want to enquire about Cement prices" class="action-btn"
+                    target="_blank">
+                    💬 Get Price
                 </a>
             </div>
 
             <!-- Product Card 2 -->
             <div class="product-card">
-                <span class="badge">Available</span>
-
-                <h3>TMT Steel</h3>
-                <p>High strength & durability</p>
-                <a href="https://wa.me/919999999999" class="action-btn" target="_blank">
-                    Ask Price
+                <span class="badge">In Stock</span>
+                <div class="product-icon">🔩</div>
+                <h3>TMT Steel Bars</h3>
+                <p>High strength Fe500D grade TMT bars for RCC construction</p>
+                <div class="product-features">
+                    <span>✓ Fe500D Grade</span>
+                    <span>✓ All Sizes</span>
+                </div>
+                <a href="https://wa.me/919999999999?text=Hi, I want to enquire about TMT Steel prices"
+                    class="action-btn" target="_blank">
+                    💬 Get Price
                 </a>
             </div>
 
             <!-- Product Card 3 -->
             <div class="product-card">
-                <span class="badge">Available</span>
-
+                <span class="badge">In Stock</span>
+                <div class="product-icon">🏖️</div>
                 <h3>Sand</h3>
-                <p>River sand & manufactured sand</p>
-                <a href="https://wa.me/919999999999" class="action-btn" target="_blank">
-                    Ask Price
+                <p>Premium quality river sand and manufactured sand (M-Sand)</p>
+                <div class="product-features">
+                    <span>✓ Fine & Coarse</span>
+                    <span>✓ Bulk Delivery</span>
+                </div>
+                <a href="https://wa.me/919999999999?text=Hi, I want to enquire about Sand prices" class="action-btn"
+                    target="_blank">
+                    💬 Get Price
                 </a>
             </div>
+
             <!-- Product Card 4 -->
             <div class="product-card">
-                <span class="badge">Available</span>
-
+                <span class="badge">In Stock</span>
+                <div class="product-icon">🪨</div>
                 <h3>Aggregates (Bajri)</h3>
-                <p>Best quality stone aggregates</p>
-                <a href="https://wa.me/919999999999" class="action-btn" target="_blank">
-                    Ask Price
+                <p>Crushed stone aggregates in 10mm, 20mm & 40mm sizes</p>
+                <div class="product-features">
+                    <span>✓ All Grades</span>
+                    <span>✓ Per CFT/Trolley</span>
+                </div>
+                <a href="https://wa.me/919999999999?text=Hi, I want to enquire about Aggregates prices"
+                    class="action-btn" target="_blank">
+                    💬 Get Price
                 </a>
             </div>
 
             <!-- Product Card 5 -->
             <div class="product-card">
-                <span class="badge">Available</span>
-
-                <h3>Bricks / Blocks</h3>
-                <p>Red bricks & concrete blocks</p>
-                <a href="https://wa.me/919999999999" class="action-btn" target="_blank">
-                    Ask Price
+                <span class="badge">In Stock</span>
+                <div class="product-icon">🧱</div>
+                <h3>Bricks & Blocks</h3>
+                <p>Red clay bricks, fly ash bricks & concrete hollow blocks</p>
+                <div class="product-features">
+                    <span>✓ Standard Sizes</span>
+                    <span>✓ Per 1000 pcs</span>
+                </div>
+                <a href="https://wa.me/919999999999?text=Hi, I want to enquire about Bricks prices" class="action-btn"
+                    target="_blank">
+                    💬 Get Price
                 </a>
             </div>
 
-
-
+            <!-- Product Card 6 - NEW -->
+            <div class="product-card">
+                <span class="badge">Available</span>
+                <div class="product-icon">🚰</div>
+                <h3>Pipes & Fittings</h3>
+                <p>PVC, CPVC & GI pipes for plumbing & construction needs</p>
+                <div class="product-features">
+                    <span>✓ All Diameters</span>
+                    <span>✓ ISI Marked</span>
+                </div>
+                <a href="https://wa.me/919999999999?text=Hi, I want to enquire about Pipes prices" class="action-btn"
+                    target="_blank">
+                    💬 Get Price
+                </a>
+            </div>
 
         </div>
     </section>
 
     <!-- FOOTER -->
     <footer>
-        <p>© 2026 Shyam Steel. All Rights Reserved.</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>SHYAM STEEL</h4>
+                <p>Your trusted partner for quality building materials in Sri Muktsar Sahib.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="calculator.html">Calculator</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li>📍 Sri Muktsar Sahib, Punjab</li>
+                    <li>📞 <a href="tel:+919999999999">+91 99999 99999</a></li>
+                    <li>💬 <a href="https://wa.me/919999999999">WhatsApp</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Shyam Steel. All rights reserved.</p>
+        </div>
     </footer>
 
+    <a href="https://wa.me/919999999999?text=Hi, I want to enquire about product prices" class="whatsapp-float"
+        target="_blank" aria-label="Chat on WhatsApp">💬</a>
+
+    <script src="js/animations.js"></script>
+    <script src="js/nav.js"></script>
 </body>
 
 </html>

@@ -28,66 +28,202 @@
     </header>
 
     <!-- NAVIGATION -->
-    <nav>
-        <a href="index.html">Home</a> |
-        <a href="products.html">Products</a> |
-        <a href="calculator.html">Calculator</a> |
-        <a href="contact.html">Contact</a>
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">SHYAM STEEL</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="active">Home</a>
+                <a href="products.html">Products</a>
+                <a href="calculator.html">Calculator</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
     </nav>
 
     <!-- HERO SECTION -->
-    <section>
-        <h2>Your Trusted Building Partner</h2>
-        <p>
-            High quality Cement, TMT Steel, Sand & Aggregates
-            at best prices with reliable delivery
-        </p>
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">🏆 Trusted Since Years</span>
+            <h2>Build Your Dreams<br>With Quality Materials</h2>
+            <p class="hero-subtitle">
+                Premium Cement, TMT Steel, Sand & Aggregates at competitive prices.<br>
+                Fast delivery across Sri Muktsar Sahib & nearby areas.
+            </p>
 
-        <div class="action-buttons">
-            <a class="action-btn" href="tel:+919999999999">
-                📞 Call Now
-            </a>
+            <div class="hero-features">
+                <div class="hero-feature">
+                    <span>✓</span> ISI Certified Products
+                </div>
+                <div class="hero-feature">
+                    <span>✓</span> Best Market Prices
+                </div>
+                <div class="hero-feature">
+                    <span>✓</span> Same Day Delivery
+                </div>
+            </div>
 
-            <a class="action-btn" href="https://wa.me/919999999999" target="_blank">
-                💬 WhatsApp Us
-            </a>
+            <div class="action-buttons">
+                <a class="action-btn primary" href="tel:+919999999999">
+                    📞 Call Now
+                </a>
+                <a class="action-btn secondary" href="https://wa.me/919999999999" target="_blank">
+                    💬 WhatsApp Us
+                </a>
+            </div>
         </div>
+    </section>
 
-
+    <!-- STATS SECTION -->
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">10+</div>
+                <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Happy Customers</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">1000+</div>
+                <div class="stat-label">Projects Completed</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Product Varieties</div>
+            </div>
+        </div>
     </section>
 
     <!-- WHY CHOOSE US -->
     <section>
-        <h2>Why Choose Us</h2>
-        <ul>
-            <li>✔ Trusted building material supplier</li>
-            <li>✔ Genuine brands & quality assurance</li>
-            <li>✔ Competitive pricing</li>
-            <li>✔ Timely delivery support</li>
-        </ul>
+        <h2>Why Choose Shyam Steel?</h2>
+        <p style="margin-bottom: 30px;">We're committed to providing the best building materials with exceptional
+            service.</p>
 
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🏆</div>
+                <h3>Quality Assured</h3>
+                <p>Only genuine ISI certified products from trusted brands</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+                <h3>Best Prices</h3>
+                <p>Competitive wholesale rates with no hidden charges</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🚚</div>
+                <h3>Fast Delivery</h3>
+                <p>Same day delivery across Sri Muktsar Sahib & nearby</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🤝</div>
+                <h3>Trusted Partner</h3>
+                <p>Long-term relationships with contractors & builders</p>
+            </div>
+        </div>
     </section>
 
-    <section>
-        <h2>Why Builders Trust Shyam Steel</h2>
-        <p>
-            We have been supplying quality building materials to homeowners,
-            contractors and builders with a commitment to trust, transparency
-            and service.
-        </p>
+    <!-- TESTIMONIALS -->
+    <section class="testimonials-section">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    "Excellent quality cement and steel. Shyam Steel has been our go-to supplier for all construction
+                    projects. Highly recommended!"
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">👷</div>
+                    <div class="author-info">
+                        <strong>Rajinder Singh</strong>
+                        <span>Contractor, Muktsar</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    "Best prices in the market with quick delivery. Built my entire house with materials from Shyam
+                    Steel. Very satisfied!"
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">🏠</div>
+                    <div class="author-info">
+                        <strong>Gurpreet Kaur</strong>
+                        <span>Homeowner, Malout</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    "Reliable supplier with genuine products. Their TMT steel quality is exceptional. Great customer
+                    service too!"
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">🏗️</div>
+                    <div class="author-info">
+                        <strong>Amit Kumar</strong>
+                        <span>Builder, Abohar</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
 
     <!-- FOOTER -->
     <footer>
-        <p>© 2026 Shyam Steel. All rights reserved.</p>
-        <p>
-            Cement • TMT Steel • Sand • Aggregates<br>
-            Sri Muktsar Sahib, Punjab
-        </p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>SHYAM STEEL</h4>
+                <p>Your trusted partner for quality building materials in Sri Muktsar Sahib and surrounding areas.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="calculator.html">Calculator</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Products</h4>
+                <ul>
+                    <li>Cement</li>
+                    <li>TMT Steel Bars</li>
+                    <li>Sand & Aggregates</li>
+                    <li>Bricks & Blocks</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li>📍 Sri Muktsar Sahib, Punjab</li>
+                    <li>📞 <a href="tel:+919999999999">+91 99999 99999</a></li>
+                    <li>💬 <a href="https://wa.me/919999999999">WhatsApp</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Shyam Steel. All rights reserved.</p>
+        </div>
     </footer>
 
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/919999999999?text=Hi, I want to enquire about building materials" class="whatsapp-float"
+        target="_blank" aria-label="Chat on WhatsApp">
+        💬
+    </a>
 
+    <script src="js/animations.js"></script>
+    <script src="js/nav.js"></script>
 </body>
 
 </html>
