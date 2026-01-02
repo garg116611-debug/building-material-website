@@ -1,77 +1,79 @@
+// Construction Cost Calculator
+// Automatically calculates material quantities and cost based on area
+
 function calculateCost() {
-    const cementBags = parseFloat(document.getElementById("cement").value) || 0;
-    const steelKg = parseFloat(document.getElementById("steel").value) || 0;
-    const floors = parseInt(document.getElementById("floors").value);
-    const area = parseFloat(document.getElementById("area").value) || 0;
+    var area = parseFloat(document.getElementById("area").value) || 0;
+    var floors = parseInt(document.getElementById("floors").value) || 1;
+    var buildingType = document.getElementById("buildingType").value || 'residential';
 
-    const cementRate = 400; // per bag
-    const steelRate = 65;   // per kg
-
-    const resultContainer = document.getElementById("resultContainer");
+    var resultContainer = document.getElementById("resultContainer");
 
     // Validation
-    if (cementBags === 0 && steelKg === 0) {
-        resultContainer.innerHTML = `
-            <div class="result-placeholder">
-                <div class="result-icon">⚠️</div>
-                <p>Please enter cement or steel quantity</p>
-            </div>
-        `;
+    if (area < 100) {
+        resultContainer.innerHTML = '<div class="result-placeholder"><div class="result-icon">📊</div><p>Enter area size (minimum 100 sq.ft) to see material calculation</p></div>';
         return;
     }
 
-    // Calculate costs
-    const cementCost = cementBags * cementRate;
-    const steelCost = steelKg * steelRate;
-    const baseCost = cementCost + steelCost;
+    // Material Rates (approximate market rates)
+    var cementRate = 400;    // per 50kg bag
+    var steelRate = 65;      // per kg
+    var crusherRate = 45;    // per CFT
 
-    // Floor multiplier
-    let multiplier = 1;
-    let floorText = "Ground Floor";
+    // Calculate total built-up area based on floors
+    var totalArea = area * floors;
+
+    // Building type multiplier
+    var typeMultiplier = buildingType === 'commercial' ? 1.3 : 1;
+
+    // Standard construction formulas:
+    // Cement: 0.4 bags per sq.ft
+    // TMT Steel: 4 kg per sq.ft (residential), 5 kg (commercial)
+    // Crusher: 0.8 CFT per sq.ft
+
+    var cementBags = Math.ceil(totalArea * 0.4 * typeMultiplier);
+    var steelKg = Math.ceil(totalArea * (buildingType === 'commercial' ? 5 : 4));
+    var crusherCFT = Math.ceil(totalArea * 0.8);
+
+    // Calculate costs
+    var cementCost = cementBags * cementRate;
+    var steelCost = steelKg * steelRate;
+    var crusherCost = crusherCFT * crusherRate;
+    var totalCost = cementCost + steelCost + crusherCost;
+
+    // Floor text
+    var floorText = "Ground Floor";
     if (floors == 2) {
-        multiplier = 1.8;
         floorText = "G+1 (2 Floors)";
     } else if (floors == 3) {
-        multiplier = 2.5;
         floorText = "G+2 (3 Floors)";
     }
 
-    const totalCost = Math.round(baseCost * multiplier);
-
     // Format numbers with commas
-    const formatNumber = (num) => num.toLocaleString('en-IN');
+    function formatNum(num) {
+        return num.toLocaleString('en-IN');
+    }
 
-    // Render result card
-    resultContainer.innerHTML = `
-        <div class="result-card">
-            <div class="total-label">Estimated Total Cost</div>
-            <div class="total-amount">₹${formatNumber(totalCost)}</div>
-            
-            <div class="result-breakdown">
-                <div class="breakdown-item">
-                    <span>🧱 Cement (${cementBags} bags × ₹${cementRate})</span>
-                    <span>₹${formatNumber(cementCost)}</span>
-                </div>
-                <div class="breakdown-item">
-                    <span>🔩 Steel (${steelKg} kg × ₹${steelRate})</span>
-                    <span>₹${formatNumber(steelCost)}</span>
-                </div>
-                <div class="breakdown-item">
-                    <span>🏠 Building Type</span>
-                    <span>${floorText}</span>
-                </div>
-                ${area > 0 ? `
-                <div class="breakdown-item">
-                    <span>📐 Area</span>
-                    <span>${formatNumber(area)} sq.ft</span>
-                </div>
-                ` : ''}
-            </div>
-            
-            <a href="https://wa.me/919999999999?text=Hi, I need a quote for ${cementBags} cement bags and ${steelKg}kg steel for a ${floorText} building" 
-               class="action-btn" target="_blank" style="margin-top: 25px; display: inline-block; padding: 12px 25px; font-size: 0.9rem;">
-                💬 Get Exact Quote
-            </a>
-        </div>
-    `;
+    // Build result HTML
+    var html = '<div class="result-card">';
+    html += '<div class="total-label">Estimated Total Cost</div>';
+    html += '<div class="total-amount">₹' + formatNum(totalCost) + '</div>';
+
+    html += '<div class="result-breakdown">';
+    html += '<div class="breakdown-header"><span>📐 Total Area</span><span>' + formatNum(totalArea) + ' sq.ft</span></div>';
+    html += '<div class="breakdown-header"><span>🏠 ' + floorText + '</span><span>' + (buildingType === 'commercial' ? 'Commercial' : 'Residential') + '</span></div>';
+    html += '</div>';
+
+    html += '<div style="margin: 15px 0; font-weight: 600; color: #f97316;">📦 Material Quantities:</div>';
+
+    html += '<div class="result-breakdown">';
+    html += '<div class="breakdown-item"><span>🧱 Cement (' + formatNum(cementBags) + ' bags)</span><span>₹' + formatNum(cementCost) + '</span></div>';
+    html += '<div class="breakdown-item"><span>🔩 TMT Bar (' + formatNum(steelKg) + ' kg)</span><span>₹' + formatNum(steelCost) + '</span></div>';
+    html += '<div class="breakdown-item"><span>🪨 Crusher (' + formatNum(crusherCFT) + ' CFT)</span><span>₹' + formatNum(crusherCost) + '</span></div>';
+    html += '</div>';
+
+    html += '<a href="https://wa.me/919999999999?text=Hi, I need quote for ' + area + ' sq.ft ' + floorText + ' construction. Cement: ' + cementBags + ' bags, TMT: ' + steelKg + ' kg, Crusher: ' + crusherCFT + ' CFT" class="action-btn" target="_blank" style="margin-top: 20px; display: block; text-align: center;">💬 Get Exact Quote</a>';
+
+    html += '</div>';
+
+    resultContainer.innerHTML = html;
 }

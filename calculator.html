@@ -46,8 +46,8 @@
     <!-- CALCULATOR SECTION -->
     <section class="calculator-section">
         <div class="calculator-header">
-            <h2>🧮 Material Cost Calculator</h2>
-            <p>Get an instant estimate for your construction materials</p>
+            <h2>🧮 Construction Cost Calculator</h2>
+            <p>Enter your area size to get instant material quantity & cost estimate</p>
         </div>
 
         <div class="calculator-container">
@@ -55,25 +55,9 @@
                 <div class="input-group">
                     <label for="area">
                         <span class="input-icon">📐</span>
-                        Area (sq. ft)
+                        Construction Area (sq. ft)
                     </label>
-                    <input type="number" id="area" placeholder="e.g., 1000" min="0">
-                </div>
-
-                <div class="input-group">
-                    <label for="cement">
-                        <span class="input-icon">🧱</span>
-                        Cement Bags
-                    </label>
-                    <input type="number" id="cement" placeholder="e.g., 100" min="0">
-                </div>
-
-                <div class="input-group">
-                    <label for="steel">
-                        <span class="input-icon">🔩</span>
-                        TMT Steel (Kg)
-                    </label>
-                    <input type="number" id="steel" placeholder="e.g., 500" min="0">
+                    <input type="number" id="area" placeholder="e.g., 1000" min="100" oninput="calculateCost()">
                 </div>
 
                 <div class="input-group">
@@ -81,28 +65,56 @@
                         <span class="input-icon">🏠</span>
                         Number of Floors
                     </label>
-                    <select id="floors">
+                    <select id="floors" onchange="calculateCost()">
                         <option value="1">Single Storey (G)</option>
                         <option value="2">Double Storey (G+1)</option>
                         <option value="3">Triple Storey (G+2)</option>
                     </select>
                 </div>
 
+                <div class="input-group">
+                    <label for="buildingType">
+                        <span class="input-icon">🏗️</span>
+                        Building Type
+                    </label>
+                    <select id="buildingType" onchange="calculateCost()">
+                        <option value="residential">Residential</option>
+                        <option value="commercial">Commercial</option>
+                    </select>
+                </div>
+
                 <button class="calc-btn" onclick="calculateCost()">
-                    Calculate Estimate
+                    🔄 Calculate Estimate
                 </button>
             </div>
 
             <div class="calculator-result" id="resultContainer">
                 <div class="result-placeholder">
                     <div class="result-icon">📊</div>
-                    <p>Enter quantities and click Calculate to see your estimate</p>
+                    <p>Enter area size to see automatic material calculation</p>
                 </div>
             </div>
         </div>
 
+        <div class="material-rates"
+            style="margin-top: 30px; padding: 20px; background: #f1f5f9; border-radius: 12px; text-align: center;">
+            <h3 style="margin-bottom: 15px; color: #f97316;">📋 Current Material Rates (Approx)</h3>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+                <span
+                    style="background: #1e293b; color: #ffffff; padding: 12px 20px; border-radius: 8px; font-weight: 500;">🧱
+                    Cement: ₹400/bag</span>
+                <span
+                    style="background: #1e293b; color: #ffffff; padding: 12px 20px; border-radius: 8px; font-weight: 500;">🔩
+                    TMT Bar: ₹65/kg</span>
+                <span
+                    style="background: #1e293b; color: #ffffff; padding: 12px 20px; border-radius: 8px; font-weight: 500;">🪨
+                    Crusher: ₹45/CFT</span>
+            </div>
+        </div>
+
         <p class="calculator-disclaimer">
-            *This is an approximate estimate. Final pricing may vary based on current market rates and site conditions.
+            *This is an approximate estimate based on standard construction practices. Actual quantities may vary based
+            on design, structure type, and site conditions.
             Contact us for accurate quotes.
         </p>
     </section>
@@ -111,7 +123,7 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h4>SHYAM STEEL</h4>
-                <p>Your trusted partner for quality building materials in Sri Muktsar Sahib.</p>
+                <p>Your trusted partner for quality building materials in Mandi Dabwali and surrounding areas.</p>
             </div>
             <div class="footer-section">
                 <h4>Quick Links</h4>
@@ -125,7 +137,9 @@
             <div class="footer-section">
                 <h4>Contact Us</h4>
                 <ul>
-                    <li>📍 Sri Muktsar Sahib, Punjab</li>
+                    <li><a href="https://www.google.com/maps/place/XPH3%2B2HQ+Mandi+Dabwali,+Punjab+151211"
+                            target="_blank" style="color: inherit;">📍 XPH3+2HQ, Badal Colony, Mandi Dabwali 151211</a>
+                    </li>
                     <li>📞 <a href="tel:+919999999999">+91 99999 99999</a></li>
                     <li>💬 <a href="https://wa.me/919999999999">WhatsApp</a></li>
                 </ul>
@@ -140,8 +154,58 @@
         target="_blank" aria-label="Chat on WhatsApp">💬</a>
 
     <script src="js/animations.js"></script>
-    <script src="js/calculator.js"></script>
     <script src="js/nav.js"></script>
+    <script>
+        function calculateCost() {
+            var area = parseFloat(document.getElementById("area").value) || 0;
+            var floors = parseInt(document.getElementById("floors").value) || 1;
+            var buildingType = document.getElementById("buildingType").value || 'residential';
+            var resultContainer = document.getElementById("resultContainer");
+
+            if (area < 100) {
+                resultContainer.innerHTML = '<div class="result-placeholder"><div class="result-icon">📊</div><p>Enter area (min 100 sq.ft)</p></div>';
+                return;
+            }
+
+            var cementRate = 400;
+            var steelRate = 65;
+            var crusherRate = 45;
+
+            var totalArea = area * floors;
+            var typeMultiplier = buildingType === 'commercial' ? 1.3 : 1;
+
+            var cementBags = Math.ceil(totalArea * 0.4 * typeMultiplier);
+            var steelKg = Math.ceil(totalArea * (buildingType === 'commercial' ? 5 : 4));
+            var crusherCFT = Math.ceil(totalArea * 0.8);
+
+            var cementCost = cementBags * cementRate;
+            var steelCost = steelKg * steelRate;
+            var crusherCost = crusherCFT * crusherRate;
+            var totalCost = cementCost + steelCost + crusherCost;
+
+            var floorText = floors == 1 ? "Ground Floor" : floors == 2 ? "G+1" : "G+2";
+
+            function fmt(n) { return n.toLocaleString('en-IN'); }
+
+            var html = '<div class="result-card">';
+            html += '<div class="total-label">Estimated Total Cost</div>';
+            html += '<div class="total-amount">₹' + fmt(totalCost) + '</div>';
+            html += '<div class="result-breakdown">';
+            html += '<div class="breakdown-item"><span>📐 Total Area</span><span>' + fmt(totalArea) + ' sq.ft</span></div>';
+            html += '<div class="breakdown-item"><span>🏠 ' + floorText + '</span><span>' + (buildingType === 'commercial' ? 'Commercial' : 'Residential') + '</span></div>';
+            html += '</div>';
+            html += '<div style="margin:15px 0;font-weight:600;color:#f97316;">📦 Materials:</div>';
+            html += '<div class="result-breakdown">';
+            html += '<div class="breakdown-item"><span>🧱 Cement (' + cementBags + ' bags)</span><span>₹' + fmt(cementCost) + '</span></div>';
+            html += '<div class="breakdown-item"><span>🔩 TMT Bar (' + steelKg + ' kg)</span><span>₹' + fmt(steelCost) + '</span></div>';
+            html += '<div class="breakdown-item"><span>🪨 Crusher (' + crusherCFT + ' CFT)</span><span>₹' + fmt(crusherCost) + '</span></div>';
+            html += '</div>';
+            html += '<a href="https://wa.me/919999999999?text=Quote for ' + area + ' sqft ' + floorText + ': Cement ' + cementBags + ' bags, TMT ' + steelKg + ' kg, Crusher ' + crusherCFT + ' CFT" class="action-btn" target="_blank" style="margin-top:20px;display:block;text-align:center;">💬 Get Quote</a>';
+            html += '</div>';
+
+            resultContainer.innerHTML = html;
+        }
+    </script>
 
 </body>
 

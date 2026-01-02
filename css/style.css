@@ -905,6 +905,15 @@ footer {
     color: rgba(255, 255, 255, 0.8);
 }
 
+.breakdown-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.95rem;
+    color: #ffffff;
+    font-weight: 500;
+    padding: 8px 0;
+}
+
 .calculator-disclaimer {
     text-align: center;
     font-size: 0.8rem;
