@@ -108,7 +108,7 @@
                     TMT Bar: ₹65/kg</span>
                 <span
                     style="background: #1e293b; color: #ffffff; padding: 12px 20px; border-radius: 8px; font-weight: 500;">🪨
-                    Crusher: ₹45/CFT</span>
+                    Crusher: ₹100/Quintal</span>
             </div>
         </div>
 
@@ -169,18 +169,18 @@
 
             var cementRate = 400;
             var steelRate = 65;
-            var crusherRate = 45;
+            var crusherRate = 100;  // per quintal
 
             var totalArea = area * floors;
             var typeMultiplier = buildingType === 'commercial' ? 1.3 : 1;
 
             var cementBags = Math.ceil(totalArea * 0.4 * typeMultiplier);
             var steelKg = Math.ceil(totalArea * (buildingType === 'commercial' ? 5 : 4));
-            var crusherCFT = Math.ceil(totalArea * 0.8);
+            var crusherQuintal = Math.ceil(totalArea * 0.5);  // quintal per sq.ft
 
             var cementCost = cementBags * cementRate;
             var steelCost = steelKg * steelRate;
-            var crusherCost = crusherCFT * crusherRate;
+            var crusherCost = crusherQuintal * crusherRate;
             var totalCost = cementCost + steelCost + crusherCost;
 
             var floorText = floors == 1 ? "Ground Floor" : floors == 2 ? "G+1" : "G+2";
@@ -198,9 +198,9 @@
             html += '<div class="result-breakdown">';
             html += '<div class="breakdown-item"><span>🧱 Cement (' + cementBags + ' bags)</span><span>₹' + fmt(cementCost) + '</span></div>';
             html += '<div class="breakdown-item"><span>🔩 TMT Bar (' + steelKg + ' kg)</span><span>₹' + fmt(steelCost) + '</span></div>';
-            html += '<div class="breakdown-item"><span>🪨 Crusher (' + crusherCFT + ' CFT)</span><span>₹' + fmt(crusherCost) + '</span></div>';
+            html += '<div class="breakdown-item"><span>🪨 Crusher (' + crusherQuintal + ' Quintal)</span><span>₹' + fmt(crusherCost) + '</span></div>';
             html += '</div>';
-            html += '<a href="https://wa.me/919999999999?text=Quote for ' + area + ' sqft ' + floorText + ': Cement ' + cementBags + ' bags, TMT ' + steelKg + ' kg, Crusher ' + crusherCFT + ' CFT" class="action-btn" target="_blank" style="margin-top:20px;display:block;text-align:center;">💬 Get Quote</a>';
+            html += '<a href="https://wa.me/919999999999?text=Quote for ' + area + ' sqft ' + floorText + ': Cement ' + cementBags + ' bags, TMT ' + steelKg + ' kg, Crusher ' + crusherQuintal + ' Quintal" class="action-btn" target="_blank" style="margin-top:20px;display:block;text-align:center;">💬 Get Quote</a>';
             html += '</div>';
 
             resultContainer.innerHTML = html;
